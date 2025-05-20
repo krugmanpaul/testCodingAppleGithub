@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EveryDubbing – 실시간 YouTube 음성 더빙</title>
+    <!-- 1) 구글폰트 로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <!-- 2) Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 3) Tailwind 설정 확장 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              nanum: ['"Nanum Gothic"', 'sans-serif'], // 새 유틸리티 font-nanum 생성
+              /* 또는 sans: ['"Nanum Gothic"', 'sans-serif'] 로 기본 Sans 대체 */
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body class="font-nanum antialiased text-gray-900 bg-gray-50"  >
+    <!-- 🔥 Hero Section -->
+    <header class="bg-gradient-to-b from-indigo-700 to-purple-700 text-white">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      
+        >
+        <!-- Copy + CTA → 왼쪽 -->
+        <div >
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6"  >
+            어떤 유튜브 영상이든<br class="hidden sm:inline" />
+            <span class="text-purple-200 leading-relaxed">원하는 언어로 즉시 더빙</span>
+          </h1>
+          <p class="text-lg sm:text-xl font-light mb-10" >
+            <span class="block mb-1">URL만 붙여넣고 원하는 음성을 선택하면 끝!</span>
+            <span class="block mb-1">EveryDubbing이 원본 언어를 자동 감지하고</span>
+            <span class="block">실시간으로 원하는 언어로 더빙된 오디오를 제공합니다.</span>
+          </p>
+          <!-- Email capture form -->
+           <!-- TODO: 액션 URL(백엔드·폼 서비스) 입력 -->
+          <form
+            class="max-w-md"
+            action="https://formsubmit.co/krugmanpaul@naver.com" 
+            method="POST" >
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="이메일을 입력하세요"
+                class="w-full px-5 py-3 rounded-xl text-gray-900 placeholder-gray-500"
+              />
+              <button
+                type="submit"
+                class="inline-flex justify-center items-center px-6 py-3 rounded-xl font-semibold bg-white/90 text-indigo-700 hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/40 transition"
+              >
+                베타 알림 받기
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Hero image → 오른쪽 (원하는 이미지로 교체) -->
+        <div class="relative">
+          <!-- 16:9 비율 컨테이너 -->
+<!-- 16:9 비율 컨테이너는 그대로 유지 -->
+<div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+  <video
+    src="../videos/"     
+    autoplay                        
+    muted                           
+    loop                            
+    playsinline                     
+    controls                        
+    class="w-full h-full object-cover"
+  >
+    <!-- 예전 브라우저용 대체 텍스트 -->
+    사용 중인 브라우저가 video 태그를 지원하지 않습니다.
+  </video>
+</div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <!-- 🌈 Use-Cases Section -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+      이런 순간에 EveryDubbing이 빛납니다
+    </h2>
+    <p class="text-lg text-gray-600">
+      화면을 볼 수 없을 때도, 낯선 언어가 부담스러울 때도<br class="hidden sm:inline">
+      듣고 이해하는 경험을 부드럽게 만들어 드려요.
+    </p>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 grid gap-12 md:grid-cols-3 text-left">
+    <!-- 운전 중 -->
+    <div class="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="w-10 h-10 mb-6 text-indigo-600" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="1.7"
+           d="M3 13l2-5h14l2 5M5 18h14m-4-5v5m-6-5v5"/>
+      </svg>
+      <h3 class="text-xl font-semibold mb-2">장거리 운전</h3>
+      <p class="text-gray-600">
+        시선을 도로에 두고도 영상 내용을<br>한국어 음성으로 그대로 청취.
+      </p>
+    </div>
+
+    <!-- 샤워/설거지 -->
+    <div class="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="w-10 h-10 mb-6 text-indigo-600" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="1.7"
+           d="M12 3v18m9-9H3"/>
+      </svg>
+      <h3 class="text-xl font-semibold mb-2">집안일·샤워 타임</h3>
+      <p class="text-gray-600">
+        손이 바쁠 때도 귀로 콘텐츠를 즐겨요.<br>물소리 속에서도 또렷한 더빙.
+      </p>
+    </div>
+
+    <!-- 영어 울렁증 -->
+    <div class="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="w-10 h-10 mb-6 text-indigo-600" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="1.7"
+           d="M15 10l4.553-4.553a1.414 1.414 0 00-2-2L13 8m-2 8l-4.553 4.553a1.414 1.414 0 002 2L11 16"/>
+      </svg>
+      <h3 class="text-xl font-semibold mb-2">영어가 두려울 때</h3>
+      <p class="text-gray-600">
+        원본 언어를 자동 감지해 한국어로 더빙.<br>복잡한 주제도 편하게 이해!
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- 🌟 Features Section -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          두 단계로 끝나는 실시간 더빙
+        </h2>
+        <p class="text-lg text-gray-600">
+          복잡한 설정 없이, 누구나 손쉽게 접근할 수 있도록 설계했습니다.
+        </p>
+      </div>
+
+      <div
+        class="max-w-5xl mx-auto px-6 grid gap-12 md:grid-cols-2 text-left "
+      >
+        <!-- Step 1 -->
+        <div class="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition">
+          <div
+            class="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xl"
+          >
+            1
+          </div>
+          <h3 class="text-xl font-semibold mb-2">URL 붙여넣기</h3>
+          <p class="text-gray-600">
+            더빙하고 싶은 YouTube 영상 URL을 입력합니다.<br> 별도의 플러그인이나
+            다운로드 과정이 필요 없습니다.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition">
+          <div
+            class="mb-6 flex items-center justify-center w-14 h-14 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xl"
+          >
+            2
+          </div>
+          <h3 class="text-xl font-semibold mb-2">실시간 더빙 완료</h3>
+          <p class="text-gray-600">
+            영상 재생과 동시에 더빙 오디오가 동기화되어 재생됩니다. 자막도 자동
+            생성되어 이해를 돕습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📣 Early‑Access CTA -->
+    <section class="py-24 bg-indigo-700 text-white text-center">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+          지금 바로 베타 테스트에 참여하세요
+        </h2>
+        <p class="text-lg mb-10 text-purple-100">
+          누구보다 빠르게 새로운 경험을 누려보고, 서비스 개선에 의견을 더해
+          주세요.
+        </p>
+        <!-- action에 TODO: 액션 URL 입력 -->
+        <form
+          class="max-w-lg mx-auto"
+          action="https://formsubmit.co/krugmanpaul@naver.com" 
+          method="POST">
+        
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="이메일을 입력하세요"
+              class="w-full px-5 py-3 rounded-xl text-gray-900 placeholder-gray-500"
+            />
+            <button
+              type="submit"
+              class="inline-flex justify-center items-center px-6 py-3 rounded-xl font-semibold bg-white/90 text-indigo-700 hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/40 transition"
+            >
+              알림 신청
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+    <!-- 👣 Footer -->
+    <footer class="py-10 text-center text-sm text-white-500">
+      © 2025 EveryDubbing | All Rights Reserved
+    </footer>
+  </body>
+</html>
